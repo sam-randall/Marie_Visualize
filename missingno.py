@@ -155,9 +155,11 @@ def matrix_new(df,
 
         ax0.set_yticks(ts_list)
         ax0.set_yticklabels(ts_ticks, fontsize=20, rotation=0)
+
     else:
-        ax0.set_yticks([0, df.shape[0] - 1])
-        ax0.set_yticklabels([1, df.shape[0]], fontsize=20, rotation=0)
+        loc_ticks = list(range(0, df.shape[0] - 1))
+        ax0.set_yticks(loc_ticks)
+        ax0.set_yticklabels(df.index.values, fontsize=6, rotation=0)
 
     # Create the inter-column vertical grid.
     in_between_point = [x + 0.5 for x in range(0, width - 1)]
